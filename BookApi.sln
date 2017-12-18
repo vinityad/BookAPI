@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApi", "BookApi\BookApi.csproj", "{48A66D11-E4A4-4AAB-948A-65ECD347AAEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApi.Data", "BookApi.Data\BookApi.Data.csproj", "{E609191C-220A-418D-AAC0-F54CA4022402}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48A66D11-E4A4-4AAB-948A-65ECD347AAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A66D11-E4A4-4AAB-948A-65ECD347AAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A66D11-E4A4-4AAB-948A-65ECD347AAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A66D11-E4A4-4AAB-948A-65ECD347AAEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E609191C-220A-418D-AAC0-F54CA4022402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E609191C-220A-418D-AAC0-F54CA4022402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E609191C-220A-418D-AAC0-F54CA4022402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E609191C-220A-418D-AAC0-F54CA4022402}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7F66C4A-6F70-4CD0-9A7E-9C35F2C8C4FC}
+	EndGlobalSection
+EndGlobal
