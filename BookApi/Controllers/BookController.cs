@@ -85,15 +85,8 @@ namespace BookApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            // Convert DTO to Entity, can use AutoMapper here too.
-            Book entity = new Book()
-            {
-                BookId = Guid.NewGuid().ToString().ToUpper(),
-                Name = book.Name,
-                DateOfPublication = book.DateOfPublication,
-                NumberOfPages = book.NumberOfPages,
-                Authors = string.Join(",", book.Authors)
-            };
+            // Convert DTO to Entity.
+            Book entity = Mapper.Map<Book>(book);
 
             // Save entity in db, can also check GUID is unique or not, because GUID is not cryptographically unique, for now it is fine.
             _bookRepository.Insert(entity);
@@ -148,13 +141,7 @@ namespace BookApi.Controllers
             if (book == null)
                 return Content<Error>(HttpStatusCode.NotFound, new Error("404", $"Cannot find book with id {bookId}."));
 
-            BookModel originalModel = new BookModel()
-            {
-                Name = book.Name,
-                Authors = book.Authors.Split(','),
-                DateOfPublication = book.DateOfPublication,
-                NumberOfPages = book.NumberOfPages
-            };
+            BookModel originalModel = Mapper.Map<BookModel>(book);
             patch.ApplyUpdatesTo(originalModel);
 
             // Apply changes back to book object and save.

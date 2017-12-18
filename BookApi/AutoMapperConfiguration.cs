@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace BookApi
 {
     /// <summary>
-    /// AutoMapper configurator
+    /// AutoMapper configuration
     /// </summary>
     public static class AutoMapperConfiguration
     {
@@ -23,6 +23,13 @@ namespace BookApi
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Book, BookDTO>()
+                    .ForMember(o => o.Authors, o => o.MapFrom(a => a.Authors.Split(',')));
+                cfg.CreateMap<BookModel, Book>()
+                    .ForMember(o => o.Authors, o => o.MapFrom(a => string.Join(",", a.Authors)))
+                    .ForMember(o => o.BookId, o => o.MapFrom(a => Guid.NewGuid().ToString().ToUpper()))
+                    .ForMember(o => o.CreatedDate, o => o.Ignore())
+                    .ForMember(o => o.UpdatedDate, o => o.Ignore())
+                    .ReverseMap()
                     .ForMember(o => o.Authors, o => o.MapFrom(a => a.Authors.Split(',')));
             });
         }

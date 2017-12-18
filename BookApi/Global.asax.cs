@@ -19,7 +19,7 @@ namespace BookApi
         /// </summary>
         protected void Application_Start()
         {
-            BookApi.Data.AutoMapperConfiguration.Configure();
+            AutoMapperConfiguration.Configure();
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
